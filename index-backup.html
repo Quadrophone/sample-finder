@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+    <title>Sample Finder</title>
+    <meta name="author" content="James Podles">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="    "/>
+   <meta name="keywords" content="   ">
+    <link rel="stylesheet" href="css/sc-player-minimal.css" type="text/css">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+  </head>
+  <body>
+  <div class="container">
+  <h1>Sample Finder</h1>
+    <div id="nav" class="input-group">
+     
+      <form action="#" id="soundcloud_search">
+        <input type="text" class="form-control" placeholder="Search for samples" id="search_string" name="search_string" />
+        <button class="btn btn-default" type="submit" id="search_button">Search</button>
+      </form>
+    </div>
+    <h2> Search Results</h2>
+    <div class="row">
+    <div class="col-md-6">
+     <h3 class="btn-primary">SoundCloud</h3>
+    <div id="search">
+   
+      <ul id="search_results">
+      </ul>
+        </div>
+        </div>
+
+        <div class="col-md-6">
+        <h3 class="btn-primary">FreeSound</h3>
+      <div  style="height:100%;"> 
+       <ul id="freesound" class="freesoundlist">
+       </ul>
+    </div>
+    </div>
+    </div>
+</div>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js" type="text/JavaScript"></script>
+    <script src="http://connect.soundcloud.com/sdk.js" type="text/JavaScript"></script>
+  <script type="text/javascript" src="js/soundcloud.player.api.js"></script>
+    <script type="text/javascript" src="js/sc-player.js"></script>
+    <script type="text/javascript" src="js/sc-searcher.js"></script>
+    <script type="text/javascript" src="js/freesound.js"></script>
+<script type="text/javascript">
+
+document.getElementById('search_button').onclick = function(){
+
+        freesound.apiKey = "9184732e701247238ec210d323f800e6";
+         var query = $('#search_string').val();
+        var page = 5
+        var filter = "type:wav"
+        var sort = "rating_desc"
+        freesound.search(query, page, filter, sort, null, null, null,
+            function(sounds){
+                var msg = ""
+                for (i in sounds.sounds){
+                    msg += "<li>" + sounds.sounds[i].original_filename + "<a href=" + sounds.sounds[i].url + " target='_blank'>Download Sample</a></li>"
+                }
+                displayMessage(msg,"resp2")
+            },function(){ displayError("Please wait....")}
+        )};
+
+        function displayMessage(text){
+        document.getElementById("freesound").innerHTML=text;
+    }
+      function displayError(text){
+        document.getElementById("soundcloud_search").innerHTML=text;
+    }
+</script>
+
+<!--
+  <script type="text/javascript">
+  
+ $(document).ready(function(){
+
+    $('#search_button').click(function(){
+      var ul = $('<ul>').appendTo('div.freesound');
+      var freesounds = $('#search_string').val();
+      var freesoundAPI = "http://www.freesound.org/api/sounds/search/?q=" + freesounds + "&type=wav&api_key=9184732e701247238ec210d323f800e6&format=json";
+
+      $.getJSON( freesoundAPI + '&callback=?', function (data){
+      }) 
+      .done(function (data) {
+           $(data.sounds).each(function(index, sound) {
+        ul.append($(document.createElement('li')).text(sound));
+    });
+
+        });
+      });
+  });
+-->
+   </script>
+  </body>
+</html>

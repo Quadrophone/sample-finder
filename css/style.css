@@ -1,0 +1,278 @@
+html,body {
+height:100%;
+width:100%;
+margin:0;
+padding:0;
+}
+
+.container {
+height:auto!important;
+min-height:1024px;
+width:100%;
+clear:both;
+background-color:#FFF;
+}
+
+ul#soundcloud {
+padding:4em 0 0;
+}
+
+body {
+min-height:100%;
+background-color:#444;
+background-image:url(../img/wild_oliva.png);
+}
+
+div#nav {
+border:1px solid #333;
+width:600px;
+text-align:center;
+border-radius:1px;
+margin:5% auto auto;
+padding:3em;
+}
+
+h1 {
+text-align:center;
+font-size:4em;
+background-color:#98B5DF;
+background-image:url(../img/waveform.svg);
+background-size:cover;
+color:#111;
+font-family:'Open Sans';
+margin:0;
+padding:1em;
+}
+
+span#head {
+margin-top:-25px;
+display:block;
+margin-bottom:25px;
+}
+
+h1 a {
+width:200px;
+}
+
+span.logo {
+font-size:22px;
+text-align:center;
+display:block;
+padding-top:4.5em;
+color:#000!important;
+width:300px;
+margin-left:auto;
+margin-right:auto;
+}
+
+p.intro {
+border-radius:1px;
+font-size:18px;
+width:60%;
+margin-left:auto;
+margin-right:auto;
+margin-top:1em;
+box-shadow:2px 2px 4px rgba(122,122,122,.5);
+-webkit-box-shadow:2px 2px 4px rgba(122,122,122,.5);
+-moz-box-shadow:2px 2px 4px rgba(122,122,122,.5);
+padding:1em;
+}
+
+div.logo {
+text-align:center;
+}
+
+span.logo img {
+margin-right:.5em;
+}
+
+a.logo {
+font-size:30px;
+padding-top:30px;
+display:inline-block;
+}
+
+div.row {
+text-align:center;
+width:100%;
+}
+
+input#search_string {
+width:84%;
+display:inline-block;
+}
+
+div#soundcloud {
+width:100%;
+float:left;
+margin:auto;
+}
+
+div.ccmixter {
+width:100%;
+margin:auto;
+}
+
+h2,h3 {
+text-align:center;
+font-family:'Open Sans';
+}
+
+h3 {
+color:#FFF;
+font-size:2.5em;
+border-radius:2px;
+box-shadow:2px 2px 3px rgba(150,150,150,.3);
+-webkit-box-shadow:2px 2px 3px rgba(150,150,150,.3);
+-moz-box-shadow:2px 2px 3px rgba(150,150,150,.3);
+padding:10px;
+}
+
+h3.soundcloud {
+background-color:#FA5E00;
+}
+
+h3.freesound {
+background-color:#C23139;
+}
+
+ul#freesound {
+list-style-type:none;
+padding-top:2.4em;
+font-size:14px;
+font-weight:700;
+font-family:Arial, sans-serif;
+padding-left:0;
+}
+
+ul#freesound li {
+height:59px;
+margin-bottom:61px;
+letter-spacing:.05em;
+padding-top:15px;
+box-shadow:3px 3px 3px rgba(120,120,120,0.5);
+-moz-box-shadow:3px 3px 3px rgba(120,120,120,0.5);
+-webkit-box-shadow:3px 3px 3px rgba(120,120,120,0.5);
+text-align:left!important;
+padding-left:20px;
+color:#000;
+border-top:2px solid rgba(200,200,200,.5);
+border-left:2px solid rgba(200,200,200,.5);
+}
+
+ul#freesound li a {
+color:#000;
+}
+
+ul#freesound audio {
+width:80px;
+height:45px;
+float:left;
+margin-right:20px;
+margin-top:-15px;
+}
+
+span.fsdl a {
+float:right;
+display:block;
+margin-right:10%;
+margin-top:2px;
+}
+
+a.fsname {
+font-size:1.2em;
+float:left;
+width:28%;
+white-space:nowrap;
+overflow:hidden;
+}
+
+button.freesound,div#soundcloud-pagination a {
+margin-left:2em;
+margin-right:2em;
+border:1px solid #428BCA;
+font-weight:600;
+width:100px;
+}
+
+div#soundcloud-pagination a {
+margin-top:1.9em;
+}
+
+button.freesound {
+margin-top:-7em;
+}
+
+#search_button {
+float:left;
+}
+
+span.donate {
+margin-top:.4em;
+}
+
+div.pt {
+text-align:center;
+margin-bottom:2em;
+}
+
+div.pt img {
+	max-width: 100%;
+	height: auto;
+}
+
+div.loader {
+display:none;
+position:fixed;
+z-index:1000;
+top:0;
+left:0;
+height:100%;
+width:100%;
+background:rgba(0,0,0,.3) url(../img/loader.gif) 50% 50% no-repeat;
+}
+
+body.loading .loader {
+display:block;
+}
+
+span.limited {
+	display: none;
+	color:#000 !important;
+	margin-top:-20px;
+}
+
+div#soundcloud-pagination,.donate {
+display:none;
+}
+@media screen and (max-width:900px) {
+		ul#soundcloud {
+			padding:0;
+		}
+	}
+@media screen and (max-width:700px) {
+	#search_button {
+		float:none;
+		margin-top:1em;
+	}
+	p.intro {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	div#nav, div.results {
+		width:98%;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	a.download {
+		background-color:white;
+	}
+	span.logo {
+		width:100%;
+	}
+
+}
+
